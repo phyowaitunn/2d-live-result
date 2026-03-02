@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Manual Update</h2>
+
+<input id="set">
+<button onclick="update()">Update</button>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="js/firebase.js"></script>
+
+<script>
+function update(){
+
+let set =
+document.getElementById("set").value;
+
+let twoD =
+set.toString().slice(-2);
+
+db.ref("manual").set({
+set:set,
+twod:twoD
+});
+
+}
+</script>
+
+</body>
+</html>
