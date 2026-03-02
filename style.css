@@ -1,0 +1,25 @@
+body{
+margin:0;
+background:#0b0f1e;
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+.app{
+padding:20px;
+}
+
+.card{
+background:#1a2038;
+margin:15px;
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 15px #000;
+}
+
+.result{
+background:#00c853;
+color:black;
+font-size:28px;
+}
