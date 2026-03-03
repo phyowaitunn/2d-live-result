@@ -1,30 +1,31 @@
 async function loadSET(){
 
-let res = await fetch(
+try{
+
+const response = await fetch(
 "https://api.allorigins.win/raw?url=https://www.set.or.th/api/set/index"
 );
 
-let data = await res.json();
+const data = await response.json();
 
 let setIndex = data.index;
 
+// show SET
 document.getElementById("set").innerText =
 setIndex;
 
-let twoD =
-setIndex.toString().slice(-2);
+// REAL 2D calculation
+let result =
+setIndex.toString().split(".")[1].slice(0,2);
 
 document.getElementById("twod").innerText =
-twoD;
+result;
 
-// save history
-db.ref("history").push({
-set:setIndex,
-twod:twoD,
-time:new Date().toLocaleString()
-});
+}catch(e){
+console.log("Market closed");
+}
 
 }
 
 loadSET();
-setInterval(loadSET,15000);
+setInterval(loadSET,5000);
